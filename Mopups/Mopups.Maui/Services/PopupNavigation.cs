@@ -8,7 +8,7 @@ namespace Mopups.Services;
 
 public class PopupNavigation : IPopupNavigation
 {
-    private readonly object _locker = new();
+    private readonly System.Threading.Lock _locker = new();
 
     public IReadOnlyList<PopupPage> PopupStack => _popupStack;
     private readonly List<PopupPage> _popupStack = new();
