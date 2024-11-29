@@ -27,8 +27,6 @@
 		<InvariantGlobalization Condition="$(TargetFramework.Contains('-maccatalyst'))">true</InvariantGlobalization>
 		<RuntimeIdentifier Condition="$(TargetFramework.Contains('-maccatalyst'))">maccatalyst-x64</RuntimeIdentifier>
 		<UseInterpreter Condition="$(TargetFramework.Contains('-android'))">False</UseInterpreter>
-		<GeneratePackageOnBuild>True</GeneratePackageOnBuild>
-		<GenerateDocumentationFile>True</GenerateDocumentationFile>
 		<Authors>Tyson Hooker,Maksym Koshovyi,Aswin P G, Kirill Lyubimov, Martijn Van Dijk, Shane Neuville</Authors>
 		<Company>$(CompanyName)</Company>
 		<PackageTags>Mopups;Popups;Maui;rg;Xamarin;ios;android;Windows;MacOS;Mopups;Dialogs;macos;windows</PackageTags>
