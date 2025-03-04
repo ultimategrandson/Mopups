@@ -256,22 +256,22 @@ public partial class PopupPage : ContentPage
 
     protected virtual Task OnAppearingAnimationBeginAsync()
     {
-        return Task.FromResult(0);
+        return Task.CompletedTask;
     }
 
     protected virtual Task OnAppearingAnimationEndAsync()
     {
-        return Task.FromResult(0);
+        return Task.CompletedTask;
     }
 
     protected virtual Task OnDisappearingAnimationBeginAsync()
     {
-        return Task.FromResult(0);
+        return Task.CompletedTask;
     }
 
     protected virtual Task OnDisappearingAnimationEndAsync()
     {
-        return Task.FromResult(0);
+        return Task.CompletedTask;
     }
 
     #endregion

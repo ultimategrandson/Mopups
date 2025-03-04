@@ -212,7 +212,7 @@ public class PopupPageRenderer : ContentViewGroup
                mCoordBuffer[1] < y;                // top edge
     }
 
-    private async void OnBackgroundClick(object sender, MotionEvent e)
+    private void OnBackgroundClick(object sender, MotionEvent e)
     {
         if (ChildCount == 0)
             return;
