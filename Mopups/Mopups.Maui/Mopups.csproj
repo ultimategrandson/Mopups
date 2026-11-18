@@ -2,7 +2,7 @@
 <Project Sdk="Microsoft.NET.Sdk">
 	<PropertyGroup>
 
-		<TargetFrameworks>net10.0;net10.0-android;net10.0-ios;net10.0-maccatalyst;</TargetFrameworks>
+		<TargetFrameworks>net11.0;net11.0-android;net11.0-ios;</TargetFrameworks>
 
 		<!-- iOS, Android, MacCatalyst -->
 		<UseMaui>true</UseMaui>
@@ -18,7 +18,7 @@
 		<SupportedOSPlatformVersion Condition="$([MSBuild]::GetTargetPlatformIdentifier('$(TargetFramework)')) == 'maccatalyst'">13.1</SupportedOSPlatformVersion>
 		<NoWarn>$(NoWarn);CS8600;CS8601;CS8602;CS8603;CS8604;CS8618;CS8625</NoWarn>
 	</PropertyGroup>
-	<PropertyGroup Condition="'$(Configuration)|$(TargetFramework)|$(Platform)'=='Debug|net10.0-android|AnyCPU'">
+	<PropertyGroup Condition="'$(Configuration)|$(TargetFramework)|$(Platform)'=='Debug|net11.0-android|AnyCPU'">
 		<PlatformTarget>AnyCPU</PlatformTarget>
 		<CheckForOverflowUnderflow>True</CheckForOverflowUnderflow>
 	</PropertyGroup>
@@ -35,26 +35,23 @@
 		<IncludeSymbols>True</IncludeSymbols>
 		<SymbolPackageFormat>snupkg</SymbolPackageFormat>
 	</PropertyGroup>
-	<PropertyGroup Condition="'$(Configuration)|$(TargetFramework)|$(Platform)'=='Release|net10.0-android|AnyCPU'">
+	<PropertyGroup Condition="'$(Configuration)|$(TargetFramework)|$(Platform)'=='Release|net11.0-android|AnyCPU'">
 		<PlatformTarget>AnyCPU</PlatformTarget>
 		<CheckForOverflowUnderflow>True</CheckForOverflowUnderflow>
 	</PropertyGroup>
-	<PropertyGroup Condition="'$(Configuration)|$(TargetFramework)|$(Platform)'=='Debug|net10.0|AnyCPU'">
+	<PropertyGroup Condition="'$(Configuration)|$(TargetFramework)|$(Platform)'=='Debug|net11.0|AnyCPU'">
 		<CheckForOverflowUnderflow>True</CheckForOverflowUnderflow>
 	</PropertyGroup>
-	<PropertyGroup Condition="'$(Configuration)|$(TargetFramework)|$(Platform)'=='Release|net10.0|AnyCPU'">
+	<PropertyGroup Condition="'$(Configuration)|$(TargetFramework)|$(Platform)'=='Release|net11.0|AnyCPU'">
 		<CheckForOverflowUnderflow>True</CheckForOverflowUnderflow>
 	</PropertyGroup>
 	<ItemGroup>
 		<PackageReference Include="AsyncAwaitBestPractices" Version="10.0.0" />
 	</ItemGroup>
 	<ItemGroup>
-	  <PackageReference Include="Microsoft.Maui.Controls" Version="10.0.101" />
+	  <PackageReference Include="Microsoft.Maui.Controls" Version="11.0.10" />
 	</ItemGroup>
 	<ItemGroup>
-	  <PackageReference Include="Microsoft.Maui.Controls.Compatibility" Version="10.0.101" />
-	</ItemGroup>
-	<ItemGroup>
-	  <PackageReference Include="Microsoft.Maui.Essentials" Version="10.0.101" />
+	  <PackageReference Include="Microsoft.Maui.Essentials" Version="11.0.10" />
 	</ItemGroup>
 </Project>
