@@ -75,14 +75,18 @@ namespace Mopups.Platforms.iOS
                     return;
 
                 var superviewFrame = handler.Handler.PlatformView.Superview.Frame;
-                var applicationFrame = UIScreen.MainScreen.ApplicationFrame;
+
+                // The status bar's height from the window's safe area, rather than UIScreen.ApplicationFrame: that has long
+                // been deprecated, and from iOS 27 (whose status bar APIs are no-ops) it isn't a number, and nor was the
+                // layout of a popup centred in it (CALayerInvalidGeometry: "CALayer position contains NaN").
+                var safeArea = handler.View?.Window?.SafeAreaInsets ?? UIEdgeInsets.Zero;
 
                 var systemPadding = new Thickness
                 {
-                    Left = applicationFrame.Left,
-                    Top = applicationFrame.Top,
-                    Right = applicationFrame.Right - applicationFrame.Width - applicationFrame.Left,
-                    Bottom = applicationFrame.Bottom - applicationFrame.Height - applicationFrame.Top + handler.KeyboardBounds.Height
+                    Left = 0,
+                    Top = safeArea.Top,
+                    Right = 0,
+                    Bottom = handler.KeyboardBounds.Height
                 };
 
                 if ((handler.Handler.VirtualView.Width != superviewFrame.Width && handler.Handler.VirtualView.Height != superviewFrame.Height)
